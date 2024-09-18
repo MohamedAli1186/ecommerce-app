@@ -7,6 +7,7 @@
   flex-direction: column;
   background-image: url("../../public/HD-wallpaper-black-texture-black-design-fine-texture-thumbnail.jpg");
   background-size: cover;
+  
 
 }
 .Main-container>h1 {
@@ -20,6 +21,7 @@
   
 }
 .products-container {
+  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -34,7 +36,7 @@
   justify-content: space-between;
   flex-direction: column;
   text-align: center;
-  background-color: #bababa;
+  background-color: #f9f9f9;
   border: 2px solid #900000;
   border-radius: 4%;
 }
@@ -54,7 +56,7 @@
 }
 .product-card h4 {
   font-size: 18px;
-  color: #900000;
+  color: #6c6c6c;
   margin: 10px 0;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
@@ -79,7 +81,7 @@
   margin-right: 10px;
   color: white;
   font-size: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
 }
@@ -94,4 +96,9 @@
   background-color: #fff;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
+}
+
+.NoItemsFound{
+  color: white;
+  font-size: 30px;
 }

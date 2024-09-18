@@ -10,12 +10,10 @@ main {
 }
 .product-container {
   margin-top:80px;
-
   width: 50vw;
   border-radius: 4%;
-  padding-top: 100px;
   background-color: #f9f9f9;
-  padding: 20px 100px;
+  padding: 20px 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,11 +22,12 @@ main {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
 }
-.product-container > img {
-  width: 400px;
-}
 .product-container > h3 {
   color: red;
+}
+.product-container > h4 {
+  color: rgb(47, 47, 47);
+  font-size:30px;
 }
 .product-container > p {
   width: 40vw;
@@ -36,9 +35,26 @@ main {
   text-align: center;
 }
 
+.input-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.input-group> img {
+  width: 400px;
+}
+.input-group>h4{
+  font-size: 30px;
+}
+
+
+
+
+/* ////////////////////////////////////////////////// */
 .reviews {
   margin: 20px;
-
   width: 40vw;
   background-color: #ddd;
   padding: 0% 40px;
@@ -50,14 +66,46 @@ main {
   font-optical-sizing: auto;
   font-size: 40px;
 }
+
+
+.review {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
 .hr {
   width: 100%;
   background-color: #000000;
   height: 0.1px;
 }
-.review {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+.review>h3 {
+  font-size: 33px;
+}
+.review>p {
+  font-size: 13px;
+}
+.review>.reviewer{
+  color: #444444;
+  font-size: 25px;
+}
+
+
+
+
+.rating-group{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rating-group>label{
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+.rating-group>.rating{
+  color: #c03939;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .review-form {

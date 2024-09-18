@@ -32,7 +32,7 @@ const ProductPage = () => {
     fetchProductDetails();
   }, [id]);
 
-  const handleAddReview = async (e) => {
+  const AddReview = async (e) => {
     e.preventDefault();
 
     if (!isAuthenticated) {
@@ -57,7 +57,7 @@ const ProductPage = () => {
         comment: newReview,
         reviewerName: "Me",
         reviewerEmail: userEmail, // Use authenticated user's email
-        date: new Date().toISOString()
+        date: new Date().toISOString(),
       };
       setReviews([...reviews, newReviewData]);
     }
@@ -65,7 +65,7 @@ const ProductPage = () => {
     setNewReview(""); // Reset the review input
   };
 
-  const handleEditReview = (reviewId) => {
+  const EditReview = (reviewId) => {
     const reviewToEdit = reviews.find((review) => review.id === reviewId);
     if (reviewToEdit) {
       setNewReview(reviewToEdit.comment);
@@ -73,7 +73,7 @@ const ProductPage = () => {
     }
   };
 
-  const handleDeleteReview = (reviewId) => {
+  const DeleteReview = (reviewId) => {
     const filteredReviews = reviews.filter((review) => review.id !== reviewId);
     setReviews(filteredReviews);
   };
@@ -83,11 +83,13 @@ const ProductPage = () => {
       <Header></Header>
       {product ? (
         <div className="product-container">
-          <img src={product.thumbnail} alt={product.title} />
+          <div className="input-group">
+            <img src={product.thumbnail} alt={product.title} />
+            <h4>Category : {product.category}</h4>
+          </div>
           <h1>{product.title}</h1>
-          <h3>Price : {product.price} EGP</h3>
-          <h4>Category : {product.category} category</h4>
-          <h4>availability Status : {product.availabilityStatus}</h4>
+          <h4>Price : {product.price} EGP</h4>
+          <h3>availability Status : {product.availabilityStatus}</h3>
           <p>{product.description}</p>
           <div className="reviews">
             <h2>Reviews</h2>
@@ -95,17 +97,20 @@ const ProductPage = () => {
               reviews.map((review) => (
                 <div key={review.id} className="review">
                   <div className="hr"></div>
-                  <h4>Reviewer: {review.reviewerName}</h4>
-                  <p>Email: {review.reviewerEmail}</p>
-                  <p>Rating: {review.rating}</p>
-                  <p>Comment: {review.comment}</p>
+                  <p className="reviewer">Reviewer: {review.reviewerName}</p>
+                  <div className="rating-group">
+                    <label>Rating :</label>
+                    <p className="rating"> {review.rating} out of 5</p>
+                  </div>
+                  
+                  <h3>{review.comment}</h3>
                   <p>Date: {new Date(review.date).toLocaleDateString()}</p>
-                  {review.reviewerEmail === userEmail && ( // Show Edit/Delete buttons only for user's reviews
+                  {review.reviewerEmail === userEmail && (
                     <>
-                      <button onClick={() => handleEditReview(review.id)}>
+                      <button onClick={() => EditReview(review.id)}>
                         Edit
                       </button>
-                      <button onClick={() => handleDeleteReview(review.id)}>
+                      <button onClick={() => DeleteReview(review.id)}>
                         Delete
                       </button>
                     </>
@@ -117,7 +122,7 @@ const ProductPage = () => {
             )}
           </div>
           {isAuthenticated ? (
-            <form className="review-form" onSubmit={handleAddReview}>
+            <form className="review-form" onSubmit={AddReview}>
               <textarea
                 value={newReview}
                 onChange={(e) => setNewReview(e.target.value)}

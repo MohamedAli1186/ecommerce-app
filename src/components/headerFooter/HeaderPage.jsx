@@ -12,7 +12,13 @@ const Header = () => {
 
   return (
     <header>
-      <h5>E-Commerce WaffarX</h5>
+      <h2 class="title">
+          <span class="title-word title-word-3">E-</span>
+          <span class="title-word title-word-1">commerce </span>
+          <span class="title-word title-word-2">Waafarx </span>
+          <br />
+          <br />
+        </h2>
       <nav>
         <NavLink className="link" exact to="/" activeClassName="active">
           Home

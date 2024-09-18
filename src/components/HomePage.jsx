@@ -6,7 +6,6 @@ import Pagination from './Pagination';
 import Header from './headerFooter/HeaderPage';
 import Footer from './headerFooter/FooterPage';
 
-
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -76,8 +75,6 @@ const HomePage = () => {
     return <p className='Loading' >Loading products...</p>;
   }
 
-
-
   return (
     <div className='Main-container'>
       <Header></Header>
@@ -106,28 +103,35 @@ const HomePage = () => {
         </select>
       </div>
 
+      {/* Display Products or No Items Found */}
       <div className="products-container">
-        {currentProducts.map((product) => (
-          <div key={product.id} className="product-card">
-            <img src={product.thumbnail} alt={product.title} />
-            <h3>{product.title}</h3>
-            <h4>Price: {product.price} EGP</h4>
-            <p>{product.description}</p>
-            <Link to={`/product/${product.id}`}>
-            <button>View Product</button>
-            </Link>
-          </div>
-          
-        ))}
+        {sortedProducts.length > 0 ? (
+          currentProducts.map((product) => (
+            <div key={product.id} className="product-card">
+              <img src={product.thumbnail} alt={product.title} />
+              <h3>{product.title}</h3>
+              <h4>Price: {product.price} EGP</h4>
+              <p>{product.description}</p>
+              <Link to={`/product/${product.id}`}>
+                <button>View Product</button>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p className='NoItemsFound'>No items found.</p> 
+        )}
       </div>
 
       {/* Pagination */}
-      <Pagination 
-        productsPerPage={productsPerPage} 
-        totalProducts={sortedProducts.length} 
-        paginate={paginate} 
-        currentPage={currentPage}
-      />
+      {sortedProducts.length > 0 && (
+        <Pagination 
+          productsPerPage={productsPerPage} 
+          totalProducts={sortedProducts.length} 
+          paginate={paginate} 
+          currentPage={currentPage}
+        />
+      )}
+
       <Footer></Footer>
     </div>
   );

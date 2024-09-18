@@ -14,27 +14,33 @@ const AboutPage = () => {
           <section className="story">
             <h2>Our Story</h2>
             <p>
-              Welcome to E-commerce, a leading destination for curated products. Our journey began with a mission to
-              provide quality products across categories like beauty, fashion, and tech. What started as a small venture has 
-              now grown into a comprehensive platform offering a wide range of items tailored to every customer's needs.
+              Welcome to E-commerce, a leading destination for curated products.
+              Our journey began with a mission to provide quality products
+              across categories like beauty, fashion, and tech. What started as
+              a small venture has now grown into a comprehensive platform
+              offering a wide range of items tailored to every customer's needs.
             </p>
           </section>
 
           <section className="mission">
             <h2>Mission & Vision</h2>
             <p>
-              Our mission is to make quality products accessible and affordable to all, while maintaining a high level of
-              customer satisfaction. We envision a future where shopping is not just a transaction, but an experience that
-              brings joy and convenience to people everywhere.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+              eligendi esse reiciendis magnam labore molestias culpnsectetur
+              voluptate, sunt temporibus nostrum impedit ea nulla?
             </p>
           </section>
 
           <section className="team">
             <h2>Meet Our Team</h2>
             <p>
-              Behind the scenes, we are a passionate team of developers, designers, and product experts committed to providing
-              the best possible experience for our customers. From our customer support to our logistics team, every
-              individual plays a key role in delivering excellence.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
+              iure itaque atque ipsam? Dolorem molestias fugiat nemo placeat?
+              Ipsam, ratione earum beatae odit quae doloribus fuga minus
+              laboriosam sit! Accusamus! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Explicabo temporibus earum quasi fugiat delectus
+              non ad quis! In laboriosam exercitationem maiores ex tempora error
+              vitae quos dolorum? Voluptas, labore laboriosam?
             </p>
           </section>
         </div>
