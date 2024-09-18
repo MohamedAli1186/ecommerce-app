@@ -1,0 +1,97 @@
+.Main-container {
+  width: 100%;
+  margin-top:80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../../public/HD-wallpaper-black-texture-black-design-fine-texture-thumbnail.jpg");
+  background-size: cover;
+
+}
+.Main-container>h1 {
+  margin-top: 80px;
+  color: #f9f9f7;
+  text-align: center;
+  font-size: 60px;
+  padding-left: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.product-card {
+  padding: 15px;
+  width: 200px;
+  height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  background-color: #bababa;
+  border: 2px solid #900000;
+  border-radius: 4%;
+}
+.product-card:hover {
+  transform: scale(1.008);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.product-card img {
+  width: 100%;
+}
+
+.product-card h3 {
+  font-size: 21px;
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+.product-card h4 {
+  font-size: 18px;
+  color: #900000;
+  margin: 10px 0;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.product-card p {
+  font-size: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+/* ///////////////////////////////////////////////////////// */
+.sorting-container ,.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+
+}
+
+.sorting-container label,.search-container label  {
+  margin-right: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+}
+
+.search-container input,.sorting-container select {
+  width: 100%;
+  padding: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: 1px solid #DBDFD0;
+  background-color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}

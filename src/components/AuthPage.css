@@ -1,0 +1,72 @@
+.auth-container{
+    width: 100%;
+    height: 110vh;
+    background-image: url("../../public/HD-wallpaper-black-texture-black-design-fine-texture-thumbnail.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.form-container {
+    margin-top:200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45vw;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+input[type="password"],input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #DBDFD0;
+    background-color: #fff; /* Ensures the background is white */
+    font-family: inherit; /* Ensures font consistency */
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+input[type="password"]:focus, input[type="email"], select:focus {
+    border-color: #DBDFD0;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #AD343E;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+button:hover {
+    background-color: #d62839;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+input[type="password"]::placeholder, input[type="email"]::placeholder {
+    color: #a19494;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+}
