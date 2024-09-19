@@ -1,4 +1,3 @@
-// src/components/AuthPage.jsx
 import React, { useState } from "react";
 import "./AuthPage.css";
 import Header from "./headerFooter/HeaderPage";

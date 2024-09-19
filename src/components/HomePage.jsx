@@ -62,7 +62,7 @@ const HomePage = () => {
     );
 
     setSortedProducts(filteredProducts);
-    setCurrentPage(1); // Reset to the first page when searching
+    setCurrentPage(1); // Reset to the first page
   };
 
   // Pagination Logic
@@ -84,7 +84,6 @@ const HomePage = () => {
       <Header></Header>
       <h1>Products Listing</h1>
 
-      {/* Search Input */}
       <div className="search-container">
         <label>Search: </label>
         <input
@@ -95,7 +94,7 @@ const HomePage = () => {
         />
       </div>
 
-      {/* Sorting Dropdown */}
+
       <div className="sorting-container">
         <label>Sort by: </label>
         <select value={sortOption} onChange={handleSort}>
@@ -107,7 +106,6 @@ const HomePage = () => {
         </select>
       </div>
 
-      {/* Display Products or No Items Found */}
       <div className="products-container">
         {sortedProducts.length > 0 ? (
           currentProducts.map((product) => (
@@ -126,7 +124,6 @@ const HomePage = () => {
         )}
       </div>
 
-      {/* Pagination */}
       {sortedProducts.length > 0 && (
         <Pagination
           productsPerPage={productsPerPage}
