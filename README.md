@@ -70,14 +70,17 @@ vercel
 Follow the prompts to link your project and configure deployment settings.
 
 Testing
+
 Unit and Integration Testing: Use testing frameworks like Jest and React Testing Library to ensure code reliability and maintainability.
 Contributing
 Feel free to contribute to this project by submitting issues or pull requests. Please follow the standard guidelines for contributions and code style.
 
 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgements
+
 React for building the user interface.
 React Router for handling routing.
 DummyJSON API for providing product data.
