@@ -7,15 +7,29 @@ The website link in vercel:
 https://ecommerce-ika01ncpf-mohamed-alis-projects-ed24ec8b.vercel.app/
 
 Features
+
 Home Page: Displays a list of products with options to sort, search, and paginate.
+
 Single Product Page: Shows detailed information about a selected product and allows users to view and manage reviews.
+
 Authentication: Includes a login page with form validation.
+
 Review Management: Authenticated users can add, edit, and delete reviews for products.
-Technologies Used
+
+
+
+
+
+Technologies Used:
+
 React: Frontend framework for building the user interface.
+
 React Router: For routing and navigation.
+
 CSS: For styling the application.
+
 DummyJSON API: For fetching product data and handling authentication.
+
 Getting Started
 Prerequisites
 -Node.js and npm installed on your machine.
