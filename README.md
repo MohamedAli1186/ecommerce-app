@@ -1,6 +1,6 @@
 E-Commerce React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built with [Create React App](https://github.com/facebook/create-react-app).
 vercel link:(https://ecommerce-ika01ncpf-mohamed-alis-projects-ed24ec8b.vercel.app/)
 
 The website link in vercel:
