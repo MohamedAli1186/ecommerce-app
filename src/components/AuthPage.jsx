@@ -8,6 +8,7 @@ const AuthPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   // Regex patterns
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,7 +31,7 @@ const AuthPage = () => {
       return;
     }
 
-    // Mock authentication (replace with real authentication logic)
+    // Mock authentication
     if (email === "user@example.com" && password === "Password@123") {
       localStorage.setItem("auth", "true");
       window.location.href = "/";
@@ -39,35 +40,54 @@ const AuthPage = () => {
     }
   };
 
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div className="auth-container">
       <Header></Header>
-        <form className="form-container" onSubmit={handleLogin}>
-          <h1>Login</h1>
-          <div className="input-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+      <form className="form-container" onSubmit={handleLogin}>
+        <h1>Login</h1>
+        <div className="input-group-email">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-group-password">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        {error && <p className="error">{error}</p>}
+        <button type="submit">Login</button>
+
+        <button type="button" onClick={togglePopup} className="mock-button">
+          Show Mock Credentials
+        </button>
+      </form>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Mock Credentials</h2>
+            <p>Email: user@example.com</p>
+            <p>Password: Password@123</p>
+            <button onClick={togglePopup}>Close</button>
           </div>
-          <div className="input-group">
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          {error && <p className="error">{error}</p>}
-          <button type="submit">Login</button>
-        </form>
-        <Footer></Footer>
+        </div>
+      )}
+      <Footer></Footer>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductPage.css";
 import Header from "./headerFooter/HeaderPage";
 import Footer from "./headerFooter/FooterPage";
@@ -12,12 +13,10 @@ const ProductPage = () => {
   const [editingReviewId, setEditingReviewId] = useState(null);
   const [error, setError] = useState("");
 
-  // Get authenticated user's email (replace with real authentication logic)
   const isAuthenticated = localStorage.getItem("auth") === "true";
-  const userEmail = localStorage.getItem("userEmail"); // Example: authenticated user's email
+  const userEmail = localStorage.getItem("userEmail");
 
   useEffect(() => {
-    // Fetch product details and reviews from API
     const fetchProductDetails = async () => {
       try {
         const response = await fetch(`https://dummyjson.com/products/${id}`);
@@ -41,22 +40,21 @@ const ProductPage = () => {
     }
 
     if (editingReviewId) {
-      // Edit existing review
       const updatedReviews = reviews.map((review) =>
         review.id === editingReviewId
           ? { ...review, comment: newReview } // Update the comment
           : review
       );
       setReviews(updatedReviews);
-      setEditingReviewId(null); // Reset after editing
+      setEditingReviewId(null);
     } else {
-      // Add a new review
+      // Add a review
       const newReviewData = {
-        id: Date.now(), // Unique ID for the new review
-        rating: 5, // Default rating, you can add rating selection
+        id: Date.now(),
+        rating: 4, //default rating
         comment: newReview,
         reviewerName: "Me",
-        reviewerEmail: userEmail, // Use authenticated user's email
+        reviewerEmail: userEmail,
         date: new Date().toISOString(),
       };
       setReviews([...reviews, newReviewData]);
@@ -83,14 +81,18 @@ const ProductPage = () => {
       <Header></Header>
       {product ? (
         <div className="product-container">
-          <div className="input-group">
+          <div className="first-section">
             <img src={product.thumbnail} alt={product.title} />
-            <h4>Category : {product.category}</h4>
+            <div className="group">
+              <h4>Category : {product.category}</h4>
+              <h4>Price : {product.price} EGP</h4>
+              <h3>availability Status : {product.availabilityStatus}</h3>
+            </div>
           </div>
+
           <h1>{product.title}</h1>
-          <h4>Price : {product.price} EGP</h4>
-          <h3>availability Status : {product.availabilityStatus}</h3>
           <p>{product.description}</p>
+
           <div className="reviews">
             <h2>Reviews</h2>
             {reviews && reviews.length > 0 ? (
@@ -102,7 +104,6 @@ const ProductPage = () => {
                     <label>Rating :</label>
                     <p className="rating"> {review.rating} out of 5</p>
                   </div>
-                  
                   <h3>{review.comment}</h3>
                   <p>Date: {new Date(review.date).toLocaleDateString()}</p>
                   {review.reviewerEmail === userEmail && (
@@ -135,7 +136,11 @@ const ProductPage = () => {
               {error && <p className="error">{error}</p>}
             </form>
           ) : (
-            <p>You must be logged in to add a review</p>
+            <div className="not-loggedin">
+              <p>You must be </p>
+              <Link to="/auth">Logged in</Link>
+              <p> to add a review</p>
+            </div>
           )}
         </div>
       ) : (

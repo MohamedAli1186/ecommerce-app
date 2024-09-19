@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './HomePage.css';
-import { Link } from 'react-router-dom';
-import Pagination from './Pagination';
-import Header from './headerFooter/HeaderPage';
-import Footer from './headerFooter/FooterPage';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./HomePage.css";
+import { Link } from "react-router-dom";
+import Pagination from "./Pagination";
+import Header from "./headerFooter/HeaderPage";
+import Footer from "./headerFooter/FooterPage";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(5);
-  const [sortOption, setSortOption] = useState('');
-  const [searchQuery, setSearchQuery] = useState(''); // Search query state
+  const [sortOption, setSortOption] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [sortedProducts, setSortedProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('https://dummyjson.com/products');
+        const response = await axios.get("https://dummyjson.com/products");
         setProducts(response.data.products);
         setSortedProducts(response.data.products);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       }
     };
 
@@ -37,13 +37,13 @@ const HomePage = () => {
 
     let sortedArray = [...products];
 
-    if (sortValue === 'priceLowToHigh') {
+    if (sortValue === "priceLowToHigh") {
       sortedArray.sort((a, b) => a.price - b.price);
-    } else if (sortValue === 'priceHighToLow') {
+    } else if (sortValue === "priceHighToLow") {
       sortedArray.sort((a, b) => b.price - a.price);
-    } else if (sortValue === 'popularity') {
+    } else if (sortValue === "popularity") {
       sortedArray.sort((a, b) => b.stock - a.stock);
-    } else if (sortValue === 'rating') {
+    } else if (sortValue === "rating") {
       sortedArray.sort((a, b) => b.rating - a.rating);
     }
 
@@ -55,9 +55,10 @@ const HomePage = () => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
 
-    const filteredProducts = products.filter(product =>
-      product.title.toLowerCase().includes(query) ||
-      product.description.toLowerCase().includes(query) 
+    const filteredProducts = products.filter(
+      (product) =>
+        product.title.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query)
     );
 
     setSortedProducts(filteredProducts);
@@ -67,16 +68,19 @@ const HomePage = () => {
   // Pagination Logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = sortedProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <p className='Loading' >Loading products...</p>;
+    return <p className="Loading">Loading products...</p>;
   }
 
   return (
-    <div className='Main-container'>
+    <div className="Main-container">
       <Header></Header>
       <h1>Products Listing</h1>
 
@@ -118,16 +122,16 @@ const HomePage = () => {
             </div>
           ))
         ) : (
-          <p className='NoItemsFound'>No items found.</p> 
+          <p className="NoItemsFound">No items found.</p>
         )}
       </div>
 
       {/* Pagination */}
       {sortedProducts.length > 0 && (
-        <Pagination 
-          productsPerPage={productsPerPage} 
-          totalProducts={sortedProducts.length} 
-          paginate={paginate} 
+        <Pagination
+          productsPerPage={productsPerPage}
+          totalProducts={sortedProducts.length}
+          paginate={paginate}
           currentPage={currentPage}
         />
       )}

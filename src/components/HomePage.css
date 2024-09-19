@@ -1,16 +1,14 @@
 .Main-container {
   width: 100%;
-  margin-top:80px;
+  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-image: url("../../public/HD-wallpaper-black-texture-black-design-fine-texture-thumbnail.jpg");
   background-size: cover;
-  
-
 }
-.Main-container>h1 {
+.Main-container > h1 {
   margin-top: 80px;
   color: #f9f9f7;
   text-align: center;
@@ -18,7 +16,6 @@
   padding-left: 20px;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  
 }
 .products-container {
   min-height: 80vh;
@@ -44,17 +41,17 @@
   transform: scale(1.008);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.product-card img {
+.product-card > img {
   width: 100%;
 }
 
-.product-card h3 {
+.product-card > h3 {
   font-size: 21px;
   margin: 10px 0;
   font-family: "Playfair Display", serif;
   font-weight: 600;
 }
-.product-card h4 {
+.product-card > h4 {
   font-size: 18px;
   color: #6c6c6c;
   margin: 10px 0;
@@ -62,22 +59,23 @@
   font-optical-sizing: auto;
 }
 
-.product-card p {
+.product-card > p {
   font-size: 12px;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
 }
 /* ///////////////////////////////////////////////////////// */
-.sorting-container ,.search-container {
+.sorting-container,
+.search-container {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40vw;
-
 }
 
-.sorting-container label,.search-container label  {
+.sorting-container label,
+.search-container label {
   margin-right: 10px;
   color: white;
   font-size: 18px;
@@ -86,19 +84,20 @@
   font-weight: 900;
 }
 
-.search-container input,.sorting-container select {
+.search-container input,
+.sorting-container select {
   width: 100%;
   padding: 10px;
   padding: 10px;
   border-radius: 20px;
   font-size: 1rem;
-  border: 1px solid #DBDFD0;
+  border: 1px solid #dbdfd0;
   background-color: #fff;
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
 }
 
-.NoItemsFound{
+.NoItemsFound {
   color: white;
   font-size: 30px;
 }
