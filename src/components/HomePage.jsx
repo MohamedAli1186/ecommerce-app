@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./HomePage.css";
 import { Link } from "react-router-dom";
+import "./HomePage.css";
 import Pagination from "./Pagination";
 import Header from "./headerFooter/HeaderPage";
 import Footer from "./headerFooter/FooterPage";
+import productData from "../data/Products"; // Importing data from local file
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -16,18 +16,10 @@ const HomePage = () => {
   const [sortedProducts, setSortedProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get("https://dummyjson.com/products");
-        setProducts(response.data.products);
-        setSortedProducts(response.data.products);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    fetchProducts();
+    // Using local data from the Product.js file
+    setProducts(productData);
+    setSortedProducts(productData);
+    setLoading(false);
   }, []);
 
   // Handle Sorting
@@ -94,7 +86,6 @@ const HomePage = () => {
         />
       </div>
 
-
       <div className="sorting-container">
         <label>Sort by: </label>
         <select value={sortOption} onChange={handleSort}>
@@ -110,12 +101,13 @@ const HomePage = () => {
         {sortedProducts.length > 0 ? (
           currentProducts.map((product) => (
             <div key={product.id} className="product-card">
-              <img src={product.thumbnail} alt={product.title} />
-              <h3>{product.title}</h3>
-              <h4>Price: {product.price} EGP</h4>
-              <p>{product.description}</p>
+              {/* Displaying product image */}
+              <img src={product.thumbnail} alt={product.title} className="product-image" />
+              <h3 className="product-title">{product.title}</h3>
+              <h4 className="product-price">Price: {product.price} EGP</h4>
+              <p className="product-description">{product.description}</p>
               <Link to={`/product/${product.id}`}>
-                <button>View Product</button>
+                <button className="view-product-btn">View Product</button>
               </Link>
             </div>
           ))

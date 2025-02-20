@@ -1,0 +1,97 @@
+.admin-panel {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../public/HD-wallpaper-black-texture-black-design-fine-texture-thumbnail.jpg");
+    background-size: cover;
+    padding-bottom: 50px;
+  }
+  
+  .admin-panel > h1 {
+    color: #f9f9f7;
+    font-size: 50px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+  }
+  
+  .add-product-form, .edit-product-form {
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .add-product-form input, .edit-product-form input, .add-product-form textarea, .edit-product-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 1px solid #dbdfd0;
+    background-color: #fff;
+    font-family: "DM Sans", sans-serif;
+  }
+  
+  .add-product-form button, .edit-product-form button {
+    padding: 10px;
+    background-color: #900000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-product-form button:hover, .edit-product-form button:hover {
+    background-color: #d62839;
+  }
+  
+  .product-list {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .hh{
+    color: white;
+    padding: 30px;
+    
+  }
+  .product-item {
+    width: 200px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 2px solid #900000;
+    border-radius: 4%;
+    text-align: center;
+  }
+  
+  .product-item img {
+    width: 100%;
+    border-radius: 4%;
+  }
+  
+  .product-item p {
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: "Playfair Display", serif;
+  }
+  
+  .product-item button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #900000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .product-item button:hover {
+    background-color: #d62839;
+  }
+  
