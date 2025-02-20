@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeaderPage.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const isAuthenticated = localStorage.getItem("auth") === "true";
@@ -12,10 +12,12 @@ const Header = () => {
 
   return (
     <header>
+      <Link class='main-logo' to='/'>
       <h2 class="title">
         <span class="title-word title-word-3">E-</span>
         <span class="title-word title-word-1">commerce </span>
       </h2>
+      </Link>
       <nav>
         <NavLink className="link" exact to="/" activeClassName="active">
           Home
